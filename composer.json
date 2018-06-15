@@ -1,0 +1,22 @@
+{
+    "name": "xafardero/pi",
+        "description": "This is Pi",
+        "type": "library",
+        "authors": [
+        {
+            "name": "Xavier Mabras",
+            "email": "xavier.mabras@protonamil.ch"
+        }
+        ],
+        "require": {
+            "php": ">=7.2.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^7"
+        },
+        "autoload": {
+            "psr-4": {
+                "Xafardero\\": "src/"
+            }
+        }
+}
