@@ -18,5 +18,10 @@
             "psr-4": {
                 "Xafardero\\": "src/"
             }
+        },
+        "autoload-dev": {
+            "psr-4": {
+                "Xafardero\\Tests\\": "tests/"
+            }
         }
 }

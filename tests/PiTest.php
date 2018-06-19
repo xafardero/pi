@@ -1,23 +1,46 @@
 <?php
 
+namespace Xafardero\Tests;
+
 use PHPUnit\Framework\TestCase;
 use Xafardero\Pi;
 use Xafardero\InvalidPiNumberException;
  
 class PiTest extends TestCase
 {
-    public function testHasNormalLength()
+    /**
+     * @dataProvider validPiList
+     */
+    public function testNumberIsAPiNumber($validPi)
     {
-        $pi = 3.14;
-        $this->assertEquals($pi, Pi::fromString($pi)->number());
+        $this->assertEquals($validPi, Pi::fromString($validPi)->number());
     }
 
-    public function testWrong()
+    public function validPiList()
+    {
+        return [
+            [3.14],
+            [3.141],
+            [3.1415],
+        ];
+    }
+
+    /**
+     * @dataProvider invalidPiList
+     */
+    public function testWrong($invalidPi)
     {
         $this->expectException(InvalidPiNumberException::class);
 
-        $pi = 6;
-        Pi::fromString($pi);
+        Pi::fromString($invalidPi);
+    }
+
+    public function invalidPiList()
+    {
+        return [
+            [6],
+            [3.14151],
+        ];
     }
 
 }

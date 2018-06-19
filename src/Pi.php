@@ -2,9 +2,7 @@
 
 namespace Xafardero;
 
-use Xafardero\InvalidPiNumberException;
-
-class Pi
+final class Pi
 {
     private $number;
 
@@ -13,12 +11,7 @@ class Pi
         $piWithSameLenght =  (float) substr(M_PI, 0, strlen($number));
 
         if ($number !== $piWithSameLenght) {
-            throw new InvalidPiNumberException(
-                sprintf(
-                    'The number %s is not the Pi number',
-                    (string) $number
-                )
-            );
+            throw InvalidPiNumberException::invalidPiNumber($number);
         }
 
         $this->number = $number;
@@ -32,6 +25,11 @@ class Pi
     public function number(): float
     {
         return $this->number;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->number;
     }
 }
 
