@@ -1,11 +1,12 @@
 <?php
+declare(strict_types=1);
 
 namespace Xafardero\Tests;
 
 use PHPUnit\Framework\TestCase;
 use Xafardero\Pi;
 use Xafardero\InvalidPiNumberException;
- 
+
 class PiTest extends TestCase
 {
     /**
@@ -19,9 +20,9 @@ class PiTest extends TestCase
     public function validPiList()
     {
         return [
-            [3.14],
-            [3.141],
-            [3.1415],
+            ['3.14'],
+            ['3.141'],
+            ['3.1415'],
         ];
     }
 
@@ -38,8 +39,8 @@ class PiTest extends TestCase
     public function invalidPiList()
     {
         return [
-            [6],
-            [3.14151],
+            ['6'],
+            ['3.14151'],
         ];
     }
 
