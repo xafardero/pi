@@ -11,7 +11,7 @@ final class Pi
     {
         $pi = $this->piWithSameLength($number);
 
-        if ($number !== $pi) {
+        if ($number !== $pi || $number === '') {
             throw InvalidPiNumberException::invalidPiNumber($number);
         }
 

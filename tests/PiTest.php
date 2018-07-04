@@ -41,6 +41,7 @@ class PiTest extends TestCase
         return [
             ['6'],
             ['3.14151'],
+            [''],
         ];
     }
 
